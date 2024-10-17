@@ -1,0 +1,44 @@
+.servicepage{
+    position:relative;
+    left:20%;
+    text-align:center;
+}
+.serviceimg{
+    width:200px;
+    height:200px;
+    border-radius:50%;
+    margin-top:20px;
+}
+.serviceHead{
+    margin-top:-30px;
+   font-family:'poppins';
+}
+.servicecard:hover{
+    border-color:darkolivegreen;
+    background-color:#EA454C;
+    color:white;
+}
+.servicecard{
+    background-color:lightblue;
+    padding:5px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:10px;
+    font-family:'poppins';
+    cursor: pointer;
+}
+.servicebtn{
+    position:absolute;
+    top:2%;
+  left:-5%;
+  width:5%;
+  transform:translate(-50%, -50%);
+  background-color: #EA454C;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top:20px;
+  font-family:'poppins';
+}

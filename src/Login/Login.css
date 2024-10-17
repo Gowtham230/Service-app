@@ -1,0 +1,60 @@
+.cardbg{
+  background-image:url('/service-app/src/assests/bg3.jpg')no-repeat;
+  background-size:cover;
+}
+.title{
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 26px;
+    color:#030303;
+    }
+.loginContainer{
+margin-top:30px;
+}
+.inputName{
+    width:90%;
+    height:4vh;
+    border-radius:12px;
+    background-color: aliceblue;
+    padding:8px;
+    border-color:#030303;
+  }
+.labelName{
+  margin:5px;
+   font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color:#030303;
+    
+}
+.loginPara{
+color: #030303;
+}
+.button{
+width: 83%;
+height: 5vh;
+background-color:#EA454C;
+color: white;
+border-color: none;
+margin-top:15px;
+border-radius: 10px;
+font-family: "Poppins", serif;
+font-weight: 400;
+font-style: normal;
+font-size: 16px;
+cursor: pointer;
+}
+.cardContainer{
+position:relative;
+left:40%;
+align-items:center;
+border:#030303;
+background-color:lightblue;
+width:50%;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 0px 10px rgba(0,0,0,0.1);
+transition: background-color 0.3s ease;
+}

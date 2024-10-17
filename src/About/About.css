@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+.aboutbtn{
+    position:absolute;
+    top:2%;
+  left:-5%;
+  width:5%;
+  transform:translate(-50%, -50%);
+  background-color: #EA454C;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-top:20px;
+  font-family:'poppins';
+}
+.aboutContainer{
+    margin-top:-80px;
+    position:relative;
+    left:20%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    font-family:'poppins';
+}
+.socialMedia{
+    display: flex;
+    flex-direction:row;
+    justify-content: space-around;
+    align-content:end;
+    margin-top: 40px;
+    width: 100%;
+}
+.aboutcard{
+    border:1px solid transparent;
+    transition:all 400ms ease;
+    background-color:lightblue;
+    padding:5px;
+    border-radius:10px;
+    text-align:center;
+    margin-top:10px;
+    width:80%;
+}
+.aboutcard:hover{
+    border-color:darkolivegreen;
+    background-color:#EA454C;
+    color:white;
+}
+.cardhead{
+    font-size:24px;
+    font-weight:bold;
+    margin-bottom:10px;
+   font-family:'poppins';
+}
+.aboutimg{
+    width:400px;
+    height:300px;
+    border-radius:10%;
+    margin-top:20px;
+}
+.aboutimage{
+    width:130%;
+    height:500px;
+    border-radius:10px;
+}
