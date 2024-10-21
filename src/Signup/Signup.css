@@ -1,0 +1,77 @@
+.cardContainer{
+    width:620px;
+    background:transparent;
+    border:2px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(30px);
+    color:#fff;
+    box-shadow:0 0 10px rgba(0,0,0,.2);
+    padding:30px 40px;
+    border-radius:10px;
+}
+.input-boxs input{
+    width:95%;
+    height:100%;
+    background:transparent;
+    border-radius:40px;
+    border:none;
+    outline:none;
+    color: #fff;
+    border:2px solid rgba(255,255,255,.2);
+    padding:10px 25px 10px 20px;
+    margin-top:15px;
+  }
+  .input-boxs select{
+    width:95%;
+    height:100%;
+    background:transparent;
+    border-radius:40px;
+    border:none;
+    outline:none;
+    color: #fff;
+    border:2px solid rgba(255,255,255,.2);
+    padding:10px 25px 10px 20px;
+    margin-top:15px;
+    appearance: none;
+  }
+  option{
+    color: black;
+  }
+  ::placeholder{
+    color:#fff;
+  
+  }
+  .cardContainer button{
+    width:95%;
+    height:35px;
+    background:#fff;
+    border:none;
+    outline:none;
+    border-radius:40px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+    cursor:pointer;
+    font-size:16px;
+    font-weight:700;
+    margin-top:15px;
+  }
+  .loginPara{
+    margin-top:10px;
+    color:#fff;
+    text-align:center;
+  }
+  .logintitle{
+    color:#fff;
+    text-align:center;
+  }
+  .input-boxs .icon{
+    position:relative;
+    left:-8%;
+    height:12px;
+  }
+  .loginPara a{
+    color:#fff;
+    text-decoration:none;
+  
+  }
+  .loginPara  a:hover{
+    text-decoration:underline;
+  }

@@ -6,6 +6,7 @@ body{
   justify-content:center;
   align-items:center;
  min-height:100vh;
+ min-width:80vh;
  background:url('./assests/bg3.jpg') no-repeat;
  background-size:cover;
  background-position:center;
@@ -14,6 +15,11 @@ body{
   margin:0;
   padding:0;
   box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+::webkit-scrollbar{
+  display:none;
 }
 /* body{
   margin-top:100px;

@@ -20,7 +20,7 @@ const [status,setStatus] = useState(false);
         const currentSession = await account.get();
         if (currentSession) {
           console.log('Session already active:', currentSession);
-          navigate('/CreateTask');
+          navigate('/HomePage');
         }
       } catch (error) {
         console.log('No active session:', error.message);

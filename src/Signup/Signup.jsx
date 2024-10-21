@@ -1,8 +1,15 @@
-
+import './Signup.css';
 import { account,Permission} from '../appwrite';
 import {useState} from 'react';
 import{DB_ID, COLLECTION_ID,databases,ID} from '../appwrite';
 import { useNavigate } from'react-router-dom'
+import { FaUser } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { RiLockPasswordFill } from "react-icons/ri";
+import { CgCalendarDates } from "react-icons/cg";
+import { FaMobile } from "react-icons/fa6";
+import { FaAddressBook } from "react-icons/fa";
+import { IoIosArrowDropdownCircle } from "react-icons/io";
 function Signup() {
   const navigate = useNavigate();
   const [loading,setLoading] = useState(false);
@@ -59,75 +66,90 @@ function Signup() {
 
   return (
     <div className="cardContainer"> 
-        <h1 className="title">SIGN UP HERE</h1>
-        <p className="loginPara">Please Enter Your Details to Engage</p>
-        <div className="loginContainer">
        <form onSubmit={handleRegistration}>
-        <label  className="labelName">Name</label><br />
-        <input type="name" className="inputName" placeholder="Enter Name" required  onChange={(e) => setUserData({...userData , name: e.target.value})} /><br />
-            <label  className="labelName">Email</label><br />
-            <input type="email" className="inputName" placeholder="Enter Email" required  onChange={(e) => setUserData({...userData , email: e.target.value})} /><br />
-            <label  className="labelName">Password</label><br />
-            <input type="password"
+       <h1 className="logintitle">SIGN UP HERE</h1>
+       <div className="input-boxs">
+       <input type="name" className="inputName" placeholder="Enter Name" required  onChange={(e) => setUserData({...userData , name: e.target.value})} />
+       <FaUser className="icon"/>
+       </div>
+       <div className="input-boxs">
+       <input type="email" className="inputName" placeholder="Enter Email" required  onChange={(e) => setUserData({...userData , email: e.target.value})} />
+       <MdEmail className="icon"/>
+       </div>
+       <div className="input-boxs">
+       <input type="password"
               className="inputName" 
               placeholder="Enter Password"
               required  
-              onChange={(e) => setUserData({...userData, password: e.target.value})} /><br />
-            <label className="labelName">Re-enter Password</label><br />
-          <input
+              onChange={(e) => setUserData({...userData, password: e.target.value})} />
+      <RiLockPasswordFill className="icon"/>
+       </div>
+            
+       <div className="input-boxs">
+       <input
             type="password"
             className="inputName"
             placeholder="Re-enter Password"
             required
-            onChange={(e) => setUserData({ ...userData, re_enter_password: e.target.value })}/><br />
-             <label className="labelName">Date of Birth</label><br />
-          <input
+            onChange={(e) => setUserData({ ...userData, re_enter_password: e.target.value })}/>
+       <RiLockPasswordFill className="icon"/>
+       </div>
+       <div className="input-boxs">
+       <input
             type="date"
             className="inputName"
             required
-            onChange={(e) => setUserData({ ...userData, dob: e.target.value })}/><br />
-            <label className="labelName">Gender</label><br />
-            <select
-            className="inputName"
-            required
-            onChange={(e) => setUserData({ ...userData, gender: e.target.value })}>
-            <option value="">Select Type</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Transgender">Transgender</option>
-          </select><br />
-
-          <label className="labelName">Type</label><br />
-            <select
-            className="inputName"
-            required
-            onChange={(e) => setUserData({ ...userData, type: e.target.value })}>
-            <option value="">Select Type</option>
-            <option value="Participants">Participants</option>
-            <option value="Service_provider">Service_provider</option>
-          </select><br />
-          <label className="labelName">Mobile Number</label><br />
+            onChange={(e) => setUserData({ ...userData, dob: e.target.value })}/>
+       <CgCalendarDates className="icon"/>
+       </div>
+          <div className="input-boxs">
           <input
             type="tel"
             className="inputName"
             placeholder="Enter Mobile Number"
             pattern="[0-9]{10}"
             required
-            onChange={(e) => setUserData({ ...userData, mobile_no: e.target.value })}/><br />
-            <label className="labelName">Address</label><br />
+            onChange={(e) => setUserData({ ...userData, mobile_no: e.target.value })}/>
+          <FaMobile className="icon"/>
+          </div>
+          <div className="input-boxs">
           <input
             type="text"
             className="inputName"
             placeholder="Enter Address"
             required
-            onChange={(e) => setUserData({ ...userData, address: e.target.value })}/><br />
-
+            onChange={(e) => setUserData({ ...userData, address: e.target.value })}/>
+            <FaAddressBook className="icon"/>
+            </div>
+            <div className="input-boxs">
+       <select
+            required
+            onChange={(e) => setUserData({ ...userData, gender: e.target.value })}>
+            <option value="">Select Gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Transgender">Transgender</option>
+          </select>
+          <IoIosArrowDropdownCircle className="icon"/>
+       </div>
+           
+       <div className="input-boxs">
+            <select
+            required
+            placeholder="Enter Address"
+            onChange={(e) => setUserData({ ...userData, type: e.target.value })}>
+            <option value="">Select Type</option>
+            <option value="Participants">Participants</option>
+            <option value="Service_provider">Service_provider</option>
+          </select>
+          <IoIosArrowDropdownCircle className="icon"/>
+          </div>
            {!loading &&  <button type="submit" className="button" >Sign up</button>}
            {loading && <button type="submit" className="button">...Loading</button>}
+           <p className="loginPara"> Already Registered! <a href="/" className="link">Login here</a></p>
         </form>
-        <p className="loginPara"> Already Registered <a href="/" className="link">Login here</a></p>
+        
         </div>
-    </div>
   )
 }
 

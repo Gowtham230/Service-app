@@ -4,6 +4,8 @@ import{useEffect, useState } from 'react';
 import { account } from '../appwrite';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FaUser } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
   const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -46,16 +48,15 @@ const [status,setStatus] = useState(false);
       console.log('Login successful:', session);
     } catch (error) {
       setStatus(false);
-      toast.error('Invalid email or password!', {
-        position: "bottom-center",
+      toast.error('🦄 Wow so easy!', {
+        position: "top-center",
         autoClose: 3000,
-        hideProgressBar:true,
+        hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         theme: "light",
-        transition: "Bounce",
         });
       console.error('Login error:', error);
     }
@@ -71,22 +72,29 @@ const [status,setStatus] = useState(false);
   };
 
   return (
-    <>
-<div className="cardContainer">
-<h1 className="title">Welcome back , Please Login</h1>
-<p className="loginPara">Please Enter Your Details</p>
-   <form onSubmit={handleLogins}>
-    <label  className="labelName">Email:
-    <input type="email" className="inputName" placeholder="Enter Email" value={email} onChange={(e) => setEmail(e.target.value)} required/></label><br />
-    <label  className="labelName">Password:
-    <input type="password" className="inputName" placeholder="Enter Password" value={password} onChange={(e) => setPassword(e.target.value)} required/></label><br />
-    {!status &&  <button type="submit" className="button">Login</button>}
-    {status && <button type="submit" className="button">...Loading</button>}
-    <ToastContainer />
-    </form>
-    <p className="loginPara"> Don&apos;t have an account? <a href="/Signup" className="link">Sign up here</a></p>
-</div>
-</>
+    <div className="container">
+        <form onSubmit={handleLogins}>
+            <h1>Login</h1>
+            <div className="input-box">
+             <input type="text" placeholder="Login" value={email} onChange={(e) => setEmail(e.target.value)} required /> 
+             <FaUser className="icon"/>
+            </div>
+            <div className="input-box">
+             <input type="password" placeholder="Enter password"  value={password} onChange={(e) => setPassword(e.target.value)} required />
+             <FaLock className="icon"/> 
+            </div>
+            <div className="remember">
+             <label><input type="checkbox"/>Remember Me</label>
+             <a href="#">Forgot password?</a>
+            </div>
+            {!status &&  <button type="submit" className="button">Login</button>}
+            {status && <button type="submit" className="button">...Loading</button>}
+           <ToastContainer />
+            <div className="register">
+            <p>Don&apos;t have an account? <a href="/Signup">Register Here</a></p>
+            </div>
+        </form>
+    </div>
   );
 };
 
