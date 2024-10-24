@@ -143,7 +143,6 @@ function Homepage() {
              <button className="taskregister">Register Here</button>
        </div>))}
        </div>
-
       </div>
       )}
       export default Homepage;

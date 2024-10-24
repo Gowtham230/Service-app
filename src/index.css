@@ -5,11 +5,11 @@ body{
   display:flex;
   justify-content:center;
   align-items:center;
- min-height:100vh;
- min-width:80vh;
- background:url('./assests/bg3.jpg') no-repeat;
- background-size:cover;
- background-position:center;
+  min-height:100vh;
+  min-width:80vh;
+  background:url('./assests/bg3.jpg') no-repeat;
+  background-size:cover;
+  background-position:center;
 }
 *{
   margin:0;

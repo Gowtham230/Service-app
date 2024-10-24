@@ -20,6 +20,21 @@
     padding:10px 25px 10px 20px;
     margin-top:15px;
   }
+  .input-boxs textarea{
+    width:95%;
+    height:100%;
+    background:transparent;
+    border-radius:40px;
+    border:none;
+    outline:none;
+    color: #fff;
+    border:2px solid rgba(255,255,255,.2);
+    padding:10px 25px 10px 20px;
+    margin-top:15px;
+  }
+  textarea::placeholder{
+    color:#fff;
+  }
   .input-boxs select{
     width:95%;
     height:100%;
@@ -36,9 +51,8 @@
   option{
     color: black;
   }
-  ::placeholder{
+input::placeholder{
     color:#fff;
-  
   }
   .cardContainer button{
     width:95%;
@@ -67,6 +81,12 @@
     left:-8%;
     height:12px;
   }
+  .input-boxs .icons{
+    position:relative;
+    left:-8%;
+    top:-17px;
+    height:12px;
+  }
   .loginPara a{
     color:#fff;
     text-decoration:none;
@@ -74,4 +94,11 @@
   }
   .loginPara  a:hover{
     text-decoration:underline;
+  }
+  .authorize{
+      background-color:#fff;
+      color:black;
+      text-align:center;
+      margin-top:10px;
+      border-radius:10px;
   }
