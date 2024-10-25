@@ -14,7 +14,9 @@ function Authorise() {
 const handleback= ()=>{
   navigate('/')
 }
+const checkauthorize = ()=>{
 
+}
   const {uniqueId} = useParams();
   useEffect(() => {
     const checkUser_id = async () => {
@@ -25,7 +27,6 @@ const handleback= ()=>{
           Query.equal('user_id',uniqueId)
          ]
         );
-
         const checkauthorized = await databases.listDocuments(DB_ID,COLLECTION_ID,
           [Query.equal("authorise",false)]
          );
@@ -37,9 +38,11 @@ const handleback= ()=>{
          
         console.log('>>>>>>>>',checkauthorize);
         if (checkauthorize.length > 0) {
-          
           console.log(checkauthorized.documents)
           console.log('user_id', checkUser_id);
+        }
+        else {
+          console.log("already verified");
         }
         setLoader(false);
       } catch (error) {
@@ -56,13 +59,16 @@ const handleback= ()=>{
 
   return (
     <>
-    {!loader && ( <div className="registerpage">
+        {loader &&<p className="authLoader">...Loading</p>}
+        
+        {checkauthorize.length==1 ? <>{!loader && ( <div className="registerpage">
         <h1>Account Verified Succesfully</h1>
         <p>Hey user, your account has been Succesfully verifed </p>
         <button onClick={handleback}>Please Login</button> 
          {/* <ToastContainer/> */}
-        </div>)}
-        {loader && <p className="authLoader">...Loading</p>}
+        
+        </div>)}</>:<><p className="authpara"> you have already Verified</p>
+        <button onClick={handleback}>Please Login</button></>}
         </>
   )
 }

@@ -32,6 +32,7 @@ function Homepage() {
   }
 
   const handleLogout = async () => {
+    console.log(account);
     try {
       await account.deleteSession('current');  
       console.log('Logged out successfully');
@@ -56,7 +57,6 @@ function Homepage() {
 
     const getSuggestions = async ()=>{
      try{
-      
          const response = await databases.listDocuments(DB_ID, TASK_COLLECTION);
          console.log(response);
          setSuggestions(response.documents);
@@ -100,7 +100,7 @@ function Homepage() {
             <li><a href="/About" onClick={handleAbout}>About</a></li>
             <li><a href="/Service" onClick={handleService}>Service</a></li>
             <li><a href="/Contact" onClick={handleContact}>Contact</a></li>
-            <li><a href="/" onClick={handleLogout}>Logout</a></li>
+            <li><button onClick={handleLogout}>Logout</button></li>
           </ul>
           <div className="bar" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <div className="line1"></div>

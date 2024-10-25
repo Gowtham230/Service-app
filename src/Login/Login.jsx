@@ -7,19 +7,22 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import {databases,DB_ID} from '../appwrite';
+import { Query } from 'appwrite';
   const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [status,setStatus] = useState(false);
     
-
   useEffect(() => {
     
     const checkSession = async () => {
       try {
         const currentSession = await account.get();
-        if (currentSession) {
+        const checkauthorized = await databases.listDocuments(DB_ID,COLLECTION_ID,
+          [Query.equal("authorise",true)]
+         );
+        if (currentSession && checkauthorized) {
           console.log('Session already active:', currentSession,checkauthorized);
           navigate('/HomePage');
         }
@@ -36,27 +39,30 @@ checkSession();
     try {
       setStatus(true);
       const session = await account.createEmailPasswordSession(email, password);
-      console.log('Login successful:', session);
+      const checkauthorized = await databases.listDocuments(DB_ID,COLLECTION_ID,
+        [Query.equal("authorise",true),Query.equal("email",email)]
+       );
+       console.log('Login successful:', session);
+        console.log('checkauthorise:', checkauthorized);
+       if(session.id != null && checkauthorized.total >0){
+        console.log('Login successful:', session);
+        console.log('checkauthorise:', checkauthorized);
+        navigate('/HomePage');
+       }
+       else{
+        console.log('--------');
+        toast.error("need to verify!", { autoClose: 3000 });
+       }
     } catch (error) {
       setStatus(false);
       toast.error("Invalid Credentials!", { autoClose: 3000 });
       console.error('Login error:', error);
     }
   };
-  const handleauthorize = async()=>{
-    try{
-      const checkauthorized = await databases.listDocuments(DB_ID,COLLECTION_ID,
-        [Query.equal("authorise",true)]
-       );
-       console.log(checkauthorized)
-    }
-    catch{
-      console.log("not verify")
-    }
-  }
+
   const handleLogins = (e) => {
     e.preventDefault();
-    if (email && password && handleauthorize) {
+    if (email && password) {
       login();
     } else {
       console.error('Email or password is missing');

@@ -62,7 +62,7 @@ function Signup() {
         subject: 'Verify Your Account 🍻',
         from: 'santhoshvellingiri100@gmail.com',
         html: `<h1>Hello!</h1> <p>Your account has been successfully created. Please verify your account by clicking the button below.</p>
-        <p>UID:${uniqueId}</p><a href="http://192.168.29.15:1235/Authorise/${uniqueId}">verify Account</a>`,
+        <p>UID:${uniqueId}</p><a href="http://localhost:1234/Authorise/${uniqueId}">verify Account</a>`,
         ispasscode: 'false'
       },
       headers: { 'User-Agent': 'insomnia/10.0.0' }
@@ -137,16 +137,7 @@ function Signup() {
           />
           <FaUser className="icon" />
         </div>
-        <div className="input-boxs">
-          <input
-            type="email"
-            className="inputName"
-            placeholder="Enter Email"
-            required
-            onChange={(e) => setUserData({ ...userData, email: e.target.value })}
-          />
-          <MdEmail className="icon" />
-        </div>
+        
         <div className="input-boxs">
           <input
             type="password"
@@ -241,7 +232,16 @@ function Signup() {
         
       </form>
       <form onSubmit={handleRegistration}>
-      
+      <div className="input-boxs">
+          <input
+            type="email"
+            className="inputName"
+            placeholder="Enter Email"
+            required
+            onChange={(e) => setUserData({ ...userData, email: e.target.value })}
+          />
+          <MdEmail className="icon" />
+        </div>
         <button type="submit" className="button" onClick={sendMail}>
             Send mail
           </button></form>
