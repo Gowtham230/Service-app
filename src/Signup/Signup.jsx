@@ -4,7 +4,6 @@ import { useState } from 'react';
 import { DB_ID, COLLECTION_ID, databases, ID } from '../appwrite';
 import { useNavigate } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
-import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { CgCalendarDates } from "react-icons/cg";
 import { FaMobile } from "react-icons/fa6";
