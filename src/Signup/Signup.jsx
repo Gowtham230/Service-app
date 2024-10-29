@@ -2,7 +2,7 @@ import './Signup.css';
 import { account, Permission } from '../appwrite';
 import { useState } from 'react';
 import { DB_ID, COLLECTION_ID, databases, ID } from '../appwrite';
-import { useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { FaUser } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
@@ -21,7 +21,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 function Signup() {
-  
+
   const unique = uuidv4();
   const uniqueId = unique.slice(26)
   console.log(uniqueId);
@@ -40,14 +40,14 @@ function Signup() {
     dob: ""
   });
 
-// const id = queryParams.get('id');
-// const secret = queryParams.get('secret');
-// const { search } = useLocation();
-// const queryParams = new URLSearchParams(search);
+  // const id = queryParams.get('id');
+  // const secret = queryParams.get('secret');
+  // const { search } = useLocation();
+  // const queryParams = new URLSearchParams(search);
 
-// return <Authorise id={id} secret={secret} />;
+  // return <Authorise id={id} secret={secret} />;
 
-// const {id,secret} = useParams();
+  // const {id,secret} = useParams();
 
 
 
@@ -74,7 +74,7 @@ function Signup() {
       console.error(error);
     });
   };
- 
+
 
   const handleRegistration = async (e) => {
     e.preventDefault();
@@ -98,28 +98,26 @@ function Signup() {
           mobile_no: userData.mobile_no,
           address: userData.address,
           dob: userData.dob,
-          user_id:uniqueId,
+          user_id: uniqueId,
         },
         [
           Permission.read('any'),
           Permission.write('any')
         ]
       );
-
-      
       console.log('Document added', documentResponse);
       setLoading(false);
       if (userData.password !== userData.re_enter_password) {
         alert('Password does not match!');
         toast.error("Password does not match!", { autoClose: 3000 });
       }
-      else{
+      else {
         toast.success("Verification email sent!", { autoClose: 3000 });
       }
     } catch (error) {
       console.error('Invalid Data', error);
       setLoading(false);
-    } 
+    }
   };
 
   return (
@@ -137,7 +135,7 @@ function Signup() {
           />
           <FaUser className="icon" />
         </div>
-        
+
         <div className="input-boxs">
           <input
             type="password"
@@ -225,26 +223,11 @@ function Signup() {
           </button>
         )}
         {loading && <button type="submit" className="button">...Loading</button>}
-        
         <p className="loginPara">
           Already Registered? <a href="/" className="link">Login here</a>
         </p>
-        
+
       </form>
-      <form onSubmit={handleRegistration}>
-      <div className="input-boxs">
-          <input
-            type="email"
-            className="inputName"
-            placeholder="Enter Email"
-            required
-            onChange={(e) => setUserData({ ...userData, email: e.target.value })}
-          />
-          <MdEmail className="icon" />
-        </div>
-        <button type="submit" className="button" onClick={sendMail}>
-            Send mail
-          </button></form>
       <ToastContainer />
     </div>
   );

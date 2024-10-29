@@ -240,7 +240,7 @@
   border:none;
   font-family:'poppins';
 }
-::placeholder{
+input::placeholder{
   color:#000414;
   font-family:'poppins';
 }
@@ -266,9 +266,6 @@
 .modal{
   position:relative;
   left:10%;
-}
-.taskcard{
- 
 }
 .taskconatinercard{
   position:relative;

@@ -16,7 +16,6 @@ function App() {
       <Routes>
        <Route path="/" element={<Login />} />
        <Route path="/Signup" element={<Signup />} />
-       {/* <Route path="/Authorise/:id/:secret" element={<Authorise />} /> */}
        <Route path="/Authorise/:uniqueId" element={<Authorise />} />
        <Route path="/Authorise" element={<Authorise />} />
        <Route path="/HomePage" element={<HomePage />} />

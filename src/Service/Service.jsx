@@ -7,7 +7,7 @@ import { HiOutlineArrowCircleLeft } from "react-icons/hi";
 import {useNavigate} from 'react-router-dom'
 function Service() {
   const navigate = useNavigate();
-  const handleClick = () => {
+  const handleClick = () =>     {
     navigate(-1);
   }
   return (
