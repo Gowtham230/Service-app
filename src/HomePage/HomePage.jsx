@@ -6,6 +6,8 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { DB_ID, databases, ID, TASK_COLLECTION } from '../appwrite';
 import { useEffect } from 'react';
 import { account } from '../appwrite';
+import logos from '../assests/glogo.png';
+
 function Homepage() {
   const [modal, setModal] = useState(false);
   const [loading, setLoading] = useState(false)
@@ -96,16 +98,19 @@ function Homepage() {
   }
 
   return (
+    <div className='bg-homepage'>
     <div className="homepage">
       <header>
         <nav>
-          <div className="logo">YourLogo</div>
+          <div className="logo">
+          <img src={logos} alt="logo" className="logoimg" />
+          </div>
           <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
             <li><a href="/HomePage" className="list" onClick={handleHome}>Home</a></li>
             <li><a href="/About" onClick={handleAbout}>About</a></li>
             <li><a href="/Service" onClick={handleService}>Service</a></li>
             <li><a href="/Contact" onClick={handleContact}>Contact</a></li>
-            <li><button onClick={handleLogout}>Logout</button></li>
+            <li><a href="/" onClick={handleLogout}>Logout</a></li>
           </ul>
           <div className="bar" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
             <div className="line1"></div>
@@ -125,16 +130,16 @@ function Homepage() {
           <form>
             <button onClick={handleCloseModal} className="closebtn"><IoIosCloseCircle /></button>
             <h2 className="taskhead">Add New Task</h2>
-
-            <input type="text" placeholder="Enter  Task Name" className="taskinput" onChange={(e) => setUserData({ ...userData, title: e.target.value })} required /><br />
-
-            <input type="text" placeholder="Description" className="taskinput" onChange={(e) => setUserData({ ...userData, description: e.target.value })} required /><br />
-
-            <input type="text" placeholder="Location" className="taskinput" onChange={(e) => setUserData({ ...userData, location: e.target.value })} required /><br />
-
-            <input type="datetime-local" placeholder="Enter a Task Name" className="taskinput" onChange={(e) => setUserData({ ...userData, event_time: e.target.value })} required /><br />
-
-            <input type="datetime-local" placeholder="Enter a Task Name" className="taskinput" onChange={(e) => setUserData({ ...userData, dead_line: e.target.value })} required /><br />
+            <label htmlFor="title">Title:</label>
+            <input type="text" id="title" placeholder="Enter  Task Name" className="taskinput" onChange={(e) => setUserData({ ...userData, title: e.target.value })} required /><br />
+            <label htmlFor="description">Description:</label>
+            <textarea type="text" id="description" placeholder="Description" className="taskinput" onChange={(e) => setUserData({ ...userData, description: e.target.value })} required /><br />
+            <label htmlFor="location">Location:</label>
+            <input type="text" id="location" placeholder="Location" className="taskinput" onChange={(e) => setUserData({ ...userData, location: e.target.value })} required /><br />
+            <label htmlFor="event">Event-Time:</label>
+            <input type="datetime-local" id="event" placeholder="Enter a Task Name" className="taskinput" onChange={(e) => setUserData({ ...userData, event_time: e.target.value })} required /><br />
+            <label htmlFor="dead">Dead-Line:</label>
+            <input type="datetime-local" id="dead" placeholder="Enter a Task Name" className="taskinput" onChange={(e) => setUserData({ ...userData, dead_line: e.target.value })} required /><br />
             <button onClick={handleCloseModal} className="taskbtn">Cancel</button>
             <button type="submit" onClick={() => { handleModal(); addSuggestion(); }} className="taskbtn">Save</button>
           </form>
@@ -142,13 +147,15 @@ function Homepage() {
       </div>)}
       <div className="taskcard">
         {suggestions.map((item) => (
-          <div className="taskconatinercard" onClick={navigateUser} key={item.id}>
-            <h1>{item.title}</h1>
-            <p>{item.description}</p>
+          <div className="taskconatinercard"  key={item.id}>
+            <h1>Titile : {item.title}</h1>
+            <p>Description : {item.description}</p>
+            <p>Location : {item.location}</p>
             <p>Event-Time: {new Date(item.event_time).toLocaleString()}</p>
             <p>Dead-Line: {new Date(item.dead_line).toLocaleString()}</p>
-            <button className="taskregister">Register Here</button>
+            <button onClick={navigateUser} className="taskregister">Register Here</button>
           </div>))}
+      </div>
       </div>
     </div>
   )

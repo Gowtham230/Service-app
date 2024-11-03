@@ -1,4 +1,4 @@
-import React from 'react'
+import {useState} from 'react'
 import '../About/About.css';
 import {useNavigate} from 'react-router-dom'
 import { FaFacebook } from "react-icons/fa";
@@ -8,13 +8,36 @@ import img1 from '../assests/img1.jpg';
 import img2 from '../assests/img2.jpg';
 import img3 from '../assests/img3.jpg';
 import img6 from '../assests/img6.jpg';
+import logos from '../assests/glogo.png';
 import { HiOutlineArrowCircleLeft } from "react-icons/hi";
 function About() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   const navigate = useNavigate();
   const handleBack = () => {
     navigate(-1);
   }
   return (
+    <div className='bgabout'>
+       <header>
+        <nav>
+        <div className="logo">
+          <img src={logos} alt="logo" className="logoimg" />
+          </div>
+          <ul className={`nav-links ${mobileMenuOpen ? 'active' : ''}`}>
+            <li><a href="/HomePage" className="list">Home</a></li>
+            <li><a href="/About" >About</a></li>
+            <li><a href="/Service">Service</a></li>
+            <li><a href="/Contact">Contact</a></li>
+            <li><a href="/">Signup</a></li>
+          </ul>
+          <div className="bar" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+            <div className="line1"></div>
+            <div className="line2"></div>
+            <div className="line3"></div>
+          </div>
+        </nav>
+      </header>
     <div className="aboutContainer">
       <h1>About Us</h1>
       <p className="aboutpara">We are a company dedicated to providing top-notch solutions for our clients. </p>
@@ -40,6 +63,7 @@ function About() {
         <a href="https://www.facebook.com" target="_blank"><FaFacebook /></a>
         <a href="https://www.twitter.com" target="_blank"><FaTwitter /></a>
         <a href="https://www.instagram.com" target="_blank"><PiInstagramLogoFill /></a>
+      </div>
       </div>
       </div>
   )

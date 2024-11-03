@@ -120,6 +120,7 @@ function Signup() {
   };
 
   return (
+    <div className='bg-signup-container'>
     <div className="cardContainer">
       <form onSubmit={handleRegistration}>
         <h1 className="logintitle">SIGN UP HERE</h1>
@@ -228,6 +229,7 @@ function Signup() {
 
       </form>
       <ToastContainer />
+    </div>
     </div>
   );
 }

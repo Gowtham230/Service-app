@@ -1,0 +1,30 @@
+.userregister{
+font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f0f2f5;
+  font-family:'poppins';
+  height:800px;
+}
+.headregister{
+    margin-top:10px;
+    text-align:center;
+}
+.pararegister{
+    margin-top: 10px;
+    gap:1rem;
+    text-align:center;
+}
+.buttonregister{
+    position:relative;
+    left:25%;
+    width:40%;
+    height:40px;
+    margin-top:10%;
+    background-color:green;
+    color:#fff;
+    border-width:1px;
+    border-radius:10px;
+    font-family:'poppins';
+    cursor:pointer;
+}

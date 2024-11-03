@@ -59,6 +59,7 @@ const Login = () => {
 
 
   return (
+    <div className='bg-login-container'>
     <div className="container">
       <form onSubmit={handleLogins}>
         <h1>Login</h1>
@@ -81,6 +82,7 @@ const Login = () => {
           <p>Don&apos;t have an account? <a href="/Signup">Register Here</a></p>
         </div>
       </form>
+    </div>
     </div>
   );
 };

@@ -1,3 +1,15 @@
+.bg-login-container{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  min-width:80vh;
+  background:url('../assests/bg3.jpg') no-repeat;
+  background-size:cover;
+  background-position:center;
+}
 .container{
   width:420px;
   background:transparent;

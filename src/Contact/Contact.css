@@ -1,22 +1,193 @@
-.App{
-    position:relative;
-    left:40%;
-    text-align:center;
-    position:relative;
-align-items:center;
-border:#030303;
-background-color:lightblue;
-width:50%;
-height:400px;
-padding:20px;
-border-radius:10px;
-box-shadow:0px 0px 10px rgba(0,0,0,0.1);
-transition: background-color 0.3s ease;
-}
-.sign-in-button{
-    background-color:#EA454C;
-    color:white;
-    padding:10px;
-    border-color:#EA454C;
-    border-radius:10px;
-}
+/* General styling for the background container */
+.bgcontact {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f0f2f5;
+  font-family:'poppins';
+  height:800px;
+  }
+  .App {
+    position: relative;
+    left:30%;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    margin-top:4%;
+  }
+  
+  .sign-in-button {
+    background-color: #4285F4;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .sign-in-button:hover {
+    background-color: #357ae8;
+  }
+  
+  .email-header {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+
+  .email-form {
+    width: 100%;
+  }
+  
+  .input-container {
+    margin-bottom: 15px;
+  }
+  
+  .input-container label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .input-container input,
+  .input-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .input-container input:focus,
+  .input-container textarea:focus {
+    outline: none;
+    border-color: #4285F4;
+  }
+  
+  .input-container textarea {
+    resize: vertical;
+    height: 100px;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .send-button,
+  .sign-out-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%;
+    position: relative;
+    left:25%;
+  }
+  
+  .send-button:hover,
+  .sign-out-button:hover {
+    background-color: #f44336;
+    
+  }
+.footer {
+    background-color: #282c34;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-family:"poppins";
+  }
+  
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  .footer-about {
+    flex: 1;
+    margin: 20px;
+  }
+  
+  .footer-about h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-about p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+
+  .footer-contact {
+    flex: 1;
+    margin: 20px;
+  }
+  
+  .footer-contact h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-contact p {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  
+  
+  .footer-social {
+    flex: 1;
+    margin: 20px;
+  }
+  .footer-social h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .footer-social a {
+    display: block;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 5px 0;
+  }
+  
+  .footer-social a:hover {
+    text-decoration: underline;
+  }
+  
+ 
+  .footer-bottom {
+    margin-top: 20px;
+    border-top: 1px solid #444;
+    padding-top: 10px;
+  }
+  
+  .footer-bottom p {
+    font-size: 12px;
+    color: #aaa;
+  }
+  

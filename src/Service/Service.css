@@ -1,44 +1,125 @@
-.servicepage{
-    position:relative;
-    left:20%;
-    text-align:center;
-}
-.serviceimg{
-    width:200px;
-    height:200px;
-    border-radius:50%;
-    margin-top:20px;
-}
-.serviceHead{
-    margin-top:-30px;
-   font-family:'poppins';
-}
-.servicecard:hover{
-    border-color:darkolivegreen;
-    background-color:#EA454C;
-    color:white;
-}
-.servicecard{
-    background-color:lightblue;
-    padding:5px;
-    border-radius:10px;
-    text-align:center;
-    margin-top:10px;
-    font-family:'poppins';
-    cursor: pointer;
-}
-.servicebtn{
-    position:absolute;
-    top:2%;
-  left:-5%;
-  width:5%;
-  transform:translate(-50%, -50%);
-  background-color: #EA454C;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-top:20px;
+
+.servicepage {
+  font-family: Arial, sans-serif;
+  margin: 10px;
+  padding: 10px;
+  background-color: #f0f2f5;
   font-family:'poppins';
+  height:800px;
+}
+
+
+.serviceimg {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-top: 20px;
+    object-fit: cover; 
+}
+.serviceHead {
+    margin-top: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+
+.servicecard:hover {
+    border-color: darkolivegreen;
+    background-color: #EA454C;
+    color: white;
+}
+
+.servicecard {
+    background-color: lightblue;
+    padding: 20px; 
+    border-radius: 10px;
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.servicebtn {
+    position: absolute;
+    top: 2%;
+    left: -5%;
+    width: 5%;
+    transform: translate(-50%, -50%);
+    background-color: #EA454C;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+@media (min-width: 768px) {
+    .servicepage {
+        left: 5%;
+    }
+    
+    .servicecard {
+        margin: 20px 10px;
+        display: inline-block; 
+        width: 45%; 
+        max-width: 300px; 
+    }
+
+    .serviceimg {
+        width: 180px;
+        height: 180px;
+    }
+
+    .serviceHead {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .servicepage {
+        left: 0;
+        text-align: center;
+    }
+
+    .servicecard {
+        width: 30%; 
+        margin: 20px;
+    }
+
+    .serviceHead {
+        font-size: 3rem;
+    }
+
+    .serviceimg {
+        width: 200px;
+        height: 200px;
+    }
+}
+@media (max-width: 767px) {
+    .servicepage {
+        left: 0;
+        padding: 10px;
+    }
+
+    .servicecard {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .serviceimg {
+        width: 150px;
+        height: 150px;
+    }
+
+    .servicebtn {
+        width: 15%;
+        top: 3%;
+        left: 2%;
+        transform: none;
+    }
+
+    .serviceHead {
+        font-size: 1.8rem;
+    }
 }

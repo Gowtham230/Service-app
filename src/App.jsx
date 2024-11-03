@@ -8,7 +8,7 @@ import About from './About/About.jsx';
 import Contact from './Contact/Contact.jsx';
 import Service from './Service/Service.jsx';
 import Authorise from './AuthorizedPage/Authorise.jsx';
-
+import PageBuilder from './PageBuilder/PageBuilder.jsx';
 function App() {
   return (
     <div>
@@ -23,6 +23,7 @@ function App() {
        <Route path="/Contact" element={<Contact />} />
        <Route path="/Service" element={<Service />} />
        <Route path="/UserRegister" element={<UserRegister />} />
+       <Route path="/PageBuilder" element={<PageBuilder />} />
       </Routes>
       </Routers>
 
