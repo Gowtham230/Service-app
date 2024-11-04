@@ -58,9 +58,9 @@ const checkauthorize = ()=>{
   
 
   return (
-    <>
-        {loader &&<p className="authLoader">...Loading</p>}
-        
+    <div className='authpage'>
+        {!loader &&<p className="authLoader">...Loading</p>}
+        <br />
         {checkauthorize.length==1 ? <>{!loader && ( <div className="registerpage">
         <h1>Account Verified Succesfully</h1>
         <p>Hey user, your account has been Succesfully verifed </p>
@@ -68,8 +68,8 @@ const checkauthorize = ()=>{
          {/* <ToastContainer/> */}
         
         </div>)}</>:<><p className="authpara"> you have already Verified</p>
-        <button onClick={handleback}>Please Login</button></>}
-        </>
+        <button className='authbtn' onClick={handleback}>Please Login</button></>}
+        </div>
   )
 }
 
