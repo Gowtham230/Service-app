@@ -11,7 +11,8 @@
   background-position:center;
 }
 .cardContainer{
-    width:620px;
+    width:600px;
+    min-height:80vh;
     background:transparent;
     border:2px solid rgba(255,255,255,.2);
     backdrop-filter:blur(30px);

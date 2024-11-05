@@ -1,5 +1,4 @@
 
-import UserRegister from './UserRegister/UserRegister.jsx';
 import {BrowserRouter as Routers, Routes, Route} from 'react-router-dom';
 import Login from './Login/Login.jsx';
 import Signup from './Signup/Signup.jsx';
@@ -9,6 +8,7 @@ import Contact from './Contact/Contact.jsx';
 import Service from './Service/Service.jsx';
 import Authorise from './AuthorizedPage/Authorise.jsx';
 import PageBuilder from './PageBuilder/PageBuilder.jsx';
+import UserRegister from './UserRegister/UserRegister.jsx';
 function App() {
   return (
     <div>

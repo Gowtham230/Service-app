@@ -32,6 +32,9 @@ function Homepage() {
   const handleHome = () => {
     navigate('/HomePage');
   }
+  const handleRegister = ()=>{
+    navigate('/userRegister')
+  }
 
   const handleLogout = async () => {
     console.log(account);
@@ -92,10 +95,7 @@ function Homepage() {
       console.error(error);
     }
   };
-
-  const navigateUser = () => {
-    navigate('/UserRegister')
-  }
+  
 
   return (
     <div className='bg-homepage'>
@@ -153,7 +153,7 @@ function Homepage() {
             <p>Location : {item.location}</p>
             <p>Event-Time: {new Date(item.event_time).toLocaleString()}</p>
             <p>Dead-Line: {new Date(item.dead_line).toLocaleString()}</p>
-            <button onClick={navigateUser} className="taskregister">Register Here</button>
+            <button onClick={handleRegister} className="taskregister">Register Here</button>
           </div>))}
       </div>
       </div>
